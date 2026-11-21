@@ -4,8 +4,8 @@
 // Publishable key aman terlihat publik KARENA RLS aktif.
 // JANGAN PERNAH menaruh secret key / service_role key di sini.
 // ============================================================
-const SUPABASE_URL = 'TEMPEL_PROJECT_URL_DI_SINI';
-const SUPABASE_PUBLISHABLE_KEY = 'TEMPEL_PUBLISHABLE_KEY_DI_SINI';
+const SUPABASE_URL = 'https://rmsxkurleufkqleagpzl.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_l7s9WCBOI3k0S5tF2gJVMA_8z-hIKST';
 
 const $ = (id) => document.getElementById(id);
 
