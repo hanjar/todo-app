@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo-ku</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Library Supabase lewat CDN (tanpa npm, tanpa build step) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <main class="kartu">
+    <header class="kepala">
+      <h1>Todo-ku</h1>
+      <button id="tombol-keluar" class="tombol tombol--samar" hidden>Keluar</button>
+    </header>
+
+    <!-- Layar masuk: muncul kalau belum login -->
+    <section id="layar-masuk">
+      <p class="info">Masuk dengan email. Kami kirim link ajaib (magic link), tanpa kata sandi.</p>
+      <form id="form-masuk" class="baris">
+        <input id="isian-email" type="email" placeholder="email@contoh.com" required autocomplete="email">
+        <button class="tombol" type="submit">Kirim link</button>
+      </form>
+      <p id="pesan-masuk" class="pesan" role="status"></p>
+    </section>
+
+    <!-- Layar todo: muncul setelah login -->
+    <section id="layar-todo" hidden>
+      <p class="info">Masuk sebagai <strong id="nama-pengguna"></strong></p>
+      <form id="form-tambah" class="baris">
+        <input id="isian-tugas" type="text" placeholder="Tulis tugas baru…" required maxlength="200">
+        <button class="tombol" type="submit">Tambah</button>
+      </form>
+      <nav class="filter" aria-label="Filter tugas">
+        <button class="chip aktif" data-filter="semua">Semua</button>
+        <button class="chip" data-filter="aktif">Aktif</button>
+        <button class="chip" data-filter="selesai">Selesai</button>
+      </nav>
+      <ul id="daftar" class="daftar"></ul>
+      <p id="kosong" class="pesan" hidden>Belum ada tugas. Tambahkan satu di atas.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
